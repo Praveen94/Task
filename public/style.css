@@ -1,0 +1,27 @@
+.heading{
+  font-family: sans-serif;
+  font-size: 22px;
+  color:#827373;
+  font-weight: lighter;
+}
+
+.input_label{
+font-weight: 500!important;
+}
+
+.horizontal_line{
+border-top: 2px solid #eee;
+}
+.input_size{
+height: 30px;!important
+}
+
+#note{
+font-size: 11px
+
+}
+
+button:hover{
+  background-color:#808080!important;
+  color: white!important;
+}
