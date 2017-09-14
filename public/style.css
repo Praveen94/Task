@@ -11,7 +11,7 @@ font-weight: 500!important;
 
 .horizontal_line{
 border-top: 2px solid #eee;
-margin-left: 15px;
+margin-left: 15px!important;
 margin-top: 0px!important;
 margin-bottom:0px!important;
 }
@@ -55,8 +55,7 @@ span#basic-addon{
 }
 
 #required_field{
-  float:left;
-  margin-left:40%
+margin: 0px;
 }
 .specify{
 color: grey;
