@@ -1,131 +1,341 @@
-<html>
+<html ng-app="myapp">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
   <link href="./public/style.css" rel="stylesheet" />
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<script src="./app.js"></script>
-  </head>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="./app.js"></script>
+</head>
 
 <body>
-<div class="container-fluid">
-<div class="row">
-<div class="col-sm-6">
-  <h4 class="lead heading">Assessment Information</h4>
-</div>
-<div class="col-sm-6">
-</div>
-</div>
-<div class="row">
-  <div class="col-sm-offset-4 col-sm-4" style="float:left;margin-left:40%">
-    <p>*Required Field</p>
-  </div>
-  <div class="col-sm-4">
-  </div>
-</div>
-<form name="myform" class="form-horizontal">
-  <div class="form-group">
-    <label class="control-label col-sm-2 input_label" for="assessment_type">Assessment Type*</label>
-    <div class="col-sm-4">
-    <select class="form-control input-sm" id="assessment_type">
-      <option>Formulation Review</option>
-</select>
-  </div>
-  <div class="col-sm-6">
-  </div>
-</div>
-<div class="form-group">
-  <label class="control-label col-sm-2 input_label" for="sub_type">Sub-Type*</label>
-  <div class="col-sm-4">
-  <select class="form-control input-sm" id="sub_type">
-    <option>Early Clinical Testing</option>
-</select>
-</div>
-<div class="col-sm-6">
-</div>
-</div>
-<div class="row">
-<div class="col-sm-6">
-<hr class="horizontal_line" />
-</div>
-<div class="col-sm-6">
-</div>
-</div>
-<div class="form-group">
-  <label class="control-label col-sm-2 input_label" for="human_testing">Human Testing</label>
-  <div class="col-sm-4">
-<div class="btn-group">
-  <button type="button" class="btn btn-default">Controlled</button>
-  <button type="button" class="btn btn-default">Uncontrolled</button>
-</div>
-</div>
-<div class="col-sm-6">
-</div>
-</div>
-<div class="form-group">
-  <label class="control-label col-sm-2 input_label" for="length_study">Length of Study</label>
-  <div class="col-sm-4">
-  <select class="form-control input-sm" id="length_study">
-    <option selected="selected">Select</option>
-</select>
-</div>
-<div class="col-sm-6">
-</div>
-</div>
-<div class="row">
-<div class="col-sm-6">
-<hr class="horizontal_line" />
-</div>
-<div class="col-sm-6">
-</div>
-</div>
-<div class="form-group">
-  <label class="control-label col-sm-2 input_label" for="formula_id">Formula ID Number</label>
-  <div class="col-sm-4">
-  <input type="text" class="form-control input-sm"/><br/>
-  <p id="note">If Formula ID does not exist please enter Lab notebook number.</p>
 
-</div>
-<div class="col-sm-6">
-</div>
-</div>
-<div class="form-group">
-  <label class="control-label col-sm-2 input_label" for="lab_notebook_no">Lab Notebook Number*</label>
-  <div class="col-sm-4">
-  <input type="text" class="form-control input-sm" id="lab_notebook_no"/><br/>
-  </div>
-<div class="col-sm-6">
-</div>
-</div>
-<div class="form-group">
-  <label class="control-label col-sm-2 input_label" for="product_name">Product Name (GSS)</label>
-  <div class="col-sm-4">
-  <input type="text" class="form-control input-sm" id="product_name" placeholder="[ProductName]"/><br/>
-  </div>
-<div class="col-sm-6">
-</div>
-</div>
-<div class="form-group">
-  <label class="control-label col-sm-2 input_label" for="product_name">Pre-Assessment</label>
-  <div class="col-sm-4">
-<div class="btn-group">
-  <button type="button" class="btn btn-md btn-default">Yes</button>
-  <button type="button" class="btn btn-md btn-default">No</button>
-</div>
-  </div>
-<div class="col-sm-6">
-</div>
-</div>
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-sm-6">
+        <h4 class="lead heading">Assessment Information</h4>
+      </div>
+      <div class="col-sm-6">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-offset-4 col-sm-4" id="required_field">
+        <p>*Required Field</p>
+      </div>
+      <div class="col-sm-4">
+      </div>
+    </div>
+
+    <form name="myform" class="form-horizontal">
+
+      <div class="form-group">
+        <label class="control-label col-sm-2 input_label" for="assessment_type">Assessment Type*</label>
+        <div class="col-sm-4">
+          <select class="form-control input-sm" id="assessment_type">
+            <option>Formulation Review</option>
+          </select>
+        </div>
+        <div class="col-sm-6">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2 input_label" for="sub_type">Sub-Type*</label>
+        <div class="col-sm-4">
+          <select class="form-control input-sm" id="sub_type">
+            <option>Early Clinical Testing</option>
+          </select>
+        </div>
+        <div class="col-sm-6">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <hr class="horizontal_line" />
+        </div>
+        <div class="col-sm-6">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2 input_label" for="human_testing">Human Testing</label>
+        <div class="col-sm-4">
+          <div class="btn-group">
+            <button type="button" class="btn btn-default">Controlled</button>
+            <button type="button" class="btn btn-default">Uncontrolled</button>
+          </div>
+        </div>
+        <div class="col-sm-6">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2 input_label" for="length_study">Length of Study</label>
+        <div class="col-sm-4">
+          <select class="form-control input-sm" id="length_study">
+            <option selected="selected">Select</option>
+          </select>
+        </div>
+        <div class="col-sm-6">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <hr class="horizontal_line" />
+        </div>
+        <div class="col-sm-6">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2 input_label" for="formula_id">Formula ID Number</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control input-sm"/><br/>
+          <p class="note" id="formula_not_exist">If Formula ID does not exist please enter Lab notebook number.</p>
+        </div>
+        <div class="col-sm-6">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2 input_label" for="lab_notebook_no">Lab Notebook Number*</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control input-sm" id="lab_notebook_no"/>
+        </div>
+        <div class="col-sm-6">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2 input_label" for="product_name">Product Name (GSS)</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control input-sm" id="product_name" placeholder="[ProductName]"/>
+        </div>
+        <div class="col-sm-6">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2 input_label" for="pre_assessment">Pre-Assessment</label>
+        <div class="col-sm-4">
+          <div class="btn-group">
+            <button type="button" class="btn btn-md btn-default">Yes</button>
+            <button type="button" class="btn btn-md btn-default">No</button>
+          </div>
+        </div>
+        <div class="col-sm-6">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2 input_label" for="product_type">Product Type</label>
+        <div class="col-sm-4">
+          <select class="form-control input-sm" id="product_type">
+            <option>[Product Type]</option>
+          </select>
+        </div>
+        <div class="col-sm-6">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2 input_label" for="end_user">End User*</label>
+        <div class="col-sm-4">
+          <select class="form-control input-sm" id="end_user">
+            <option selected="selected">Adult</option>
+          </select>
+        </div>
+        <div class="col-sm-6">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2 input_label" for="safety_related_claims">Safety Related Claims</label>
+        <div class="col-sm-4">
+          <p class="note">Select all that apply</p>
+          <div class="checkbox">
+            <label><input type="checkbox" value="None">None</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="Hypoallergenic">Hypoallergenic</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="Non-irritating">Non-irritating</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="NMT">NMT</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="Developed for / Designed for / suitable for
+              newborns across the regions">Developed for / Designed for / suitable for
+              newborns across the regions</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="Other" ng-model="other">Other</label><i class="specify">Specify:</i>
+              <br />
+              <input type="text" class="form-control input-sm" ng-show="other" />
+            </div>
+          </div>
+          <br />
+          <div class="col-sm-6">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2 input_label">Similar Products</label>
+          <div class="col-sm-4">
+            <div class="btn-group">
+              <button type="button" class="btn btn-default">Yes</button>
+              <button type="button" class="btn btn-default">No</button>
+            </div>
+          </div>
+          <div class="col-sm-6">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2 input_label" for="associated_chassis">Associated Chassis</label>
+          <div class="col-sm-4">
+            <input type="text" id="associated_chassis" placeholder="Type-ahead" class="form-control input-sm"/>
+          </div>
+          <div class="col-sm-6">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2 input_label" for="associated_apr">Associated APR</label>
+          <div class="col-sm-4">
+            <input type="text" id="associated_apr" placeholder="Type-ahead" class="form-control input-sm"/>
+          </div>
+          <div class="col-sm-6">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2 input_label" for="safety_reports">Safety Reports&nbsp;<p class="note">Attach HRIPT, CIT, PA, PT, HOT safety reports</p></label>
+          <div class="col-sm-4">
+            <div class="input-group">
+              <input type="text" class="form-control input-sm" placeholder="Filename Description">
+              <span class="input-group-btn">
+                <button class="btn btn-default btn-sm" type="button">Add File</button>
+              </span>
+            </div>
+            <div class="col-sm-6">
+            </div>
+          </div>
+        </div>
 
 
 
+        <div class="form-group">
+          <label class="control-label col-sm-2 input_label">New INCI to JnJ?*</label>
+          <div class="col-sm-4">
+            <div class="btn-group">
+              <button type="button" class="btn btn-default">Yes</button>
+              <button type="button" class="btn btn-default">No</button>
+            </div>
+          </div>
+          <div class="col-sm-6">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2 input_label" for="trade_name">Trade Name*</label>
+          <div class="col-sm-4">
+            <input type="text" id="trade_name" placeholder="Type-ahead" class="form-control input-sm"/>
+          </div>
+          <div class="col-sm-6">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2 input_label">Fragrance*</label>
+          <div class="col-sm-4">
+            <div class="btn-group">
+              <button type="button" class="btn btn-default">Modified</button>
+              <button type="button" class="btn btn-default">Novel</button>
+              <button type="button" class="btn btn-default">Existing</button>
+            </div>
+          </div>
+          <div class="col-sm-6">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2 input_label" for="concentration_tested">Concentration Tested</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control input-sm" id="concentration_tested" placeholder="Enter Concentration"/>
+          </div>
+          <div class="col-sm-6">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2 input_label">Safety Testing</label>
+          <div class="col-sm-4">
+            <div class="btn-group">
+              <button type="button" class="btn btn-default">Yes</button>
+              <button type="button" class="btn btn-default">No</button>
+            </div>
+            <button class="btn btn-default" id="add_signature">Add Signature</button>
+          </div>
+          <div class="col-sm-6">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2 input_label" for="approver">Approver</label>
+          <div class="col-sm-4">
+            <div class="input-group">
+              <input type="text" class="form-control" aria-describedby="basic-addon2">
+              <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-user"></span></span>
+            </div>
+          </div>
+          <div class="col-sm-6">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2 input_label" for="attachments">Attachments</label>
+          <div class="col-sm-4">
+            <div class="input-group">
+              <input type="text" class="form-control input-sm" id="attachments" placeholder="Filename Description">
+              <span class="input-group-btn">
+                <button class="btn btn-default btn-sm" type="button">Add File</button>
+              </span>
+            </div>
+            <p class="small"><button class="attach btn-primary" type="button"><span class="glyphicon glyphicon-plus"></span></button>  Attach Another File</p>
+          </div>
+          <div class="col-sm-6">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <hr class="horizontal_line" />
+          </div>
+          <div class="col-sm-6">
+          </div>
+        </div>
 
 
-</form>
-</div>
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="small" id="attach_formula"><button class="attach btn-primary" type="button"><span class="glyphicon glyphicon-plus"></span></button>  Attach another formula</p>
+          </div>
+          <div class="col-sm-9">
+          </div>
+        </div>
 
-</body>
-</html>
+      </form>
+    </div>
+
+
+  </body>
+  </html>

@@ -11,13 +11,17 @@ font-weight: 500!important;
 
 .horizontal_line{
 border-top: 2px solid #eee;
+margin-left: 15px;
+margin-top: 0px!important;
+margin-bottom:0px!important;
 }
 .input_size{
 height: 30px;!important
 }
 
-#note{
-font-size: 11px
+p.note{
+font-size: 11px;
+margin-top:5px;
 
 }
 
@@ -25,3 +29,44 @@ button:hover{
   background-color:#808080!important;
   color: white!important;
 }
+button{
+width:120px!important;
+
+}
+
+button#add_signature{
+margin-left:30px;
+}
+
+button.attach{
+margin-top: 5px;
+width:auto!important;
+}
+button.attach:hover{
+  background-color: #337ab7!important;
+}
+label{
+text-align:justify!important;
+margin-left: 15px!important;
+}
+
+span#basic-addon{
+  background-color: white!important;
+}
+
+#required_field{
+  float:left;
+  margin-left:40%
+}
+.specify{
+color: grey;
+padding: 8px
+}
+p#attach_formula{
+  margin-left:15px;
+}
+p{
+  margin-bottom:0px!important;
+}
+p#formula_not_exist{
+  margin-top: -14px!important;
