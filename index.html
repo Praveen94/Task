@@ -6,13 +6,15 @@
   <link href="./public/style.css" rel="stylesheet" />
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+  <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
   <script src="./app.js"></script>
 </head>
 
 <body>
 
-  <div class="container-fluid">
+
+  <div class="container-fluid" ng-controller="TypeAheadController">
 
     <div class="row">
       <div class="col-sm-6">
@@ -100,7 +102,7 @@
       <div class="form-group">
         <label class="control-label col-sm-2 input_label" for="formula_id">Formula ID Number</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control input-sm"/><br/>
+          <input type="text" class="form-control input-sm" ng-model="selected1" typeahead="data for data in datas | filter:$viewValue | limitTo:2"/><br/>
           <p class="note" id="formula_not_exist">If Formula ID does not exist please enter Lab notebook number.</p>
         </div>
         <div class="col-sm-6">
@@ -108,9 +110,9 @@
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label" for="lab_notebook_no">Lab Notebook Number*</label>
+        <label class="control-label col-sm-2 input_label" for="lab_notebook_no" >Lab Notebook Number*</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control input-sm" id="lab_notebook_no"/>
+          <input type="text" class="form-control input-sm" id="lab_notebook_no" ng-model="selected2" typeahead="data for data in datas | filter:$viewValue | limitTo:2"/>
         </div>
         <div class="col-sm-6">
         </div>
@@ -119,7 +121,7 @@
       <div class="form-group">
         <label class="control-label col-sm-2 input_label" for="product_name">Product Name (GSS)</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control input-sm" id="product_name" placeholder="[ProductName]"/>
+          <input type="text" class="form-control input-sm" id="product_name" placeholder="[ProductName]" ng-model="selected3" typeahead="data for data in datas | filter:$viewValue | limitTo:2"/>
         </div>
         <div class="col-sm-6">
         </div>
@@ -206,7 +208,7 @@
         <div class="form-group">
           <label class="control-label col-sm-2 input_label" for="associated_chassis">Associated Chassis</label>
           <div class="col-sm-4">
-            <input type="text" id="associated_chassis" placeholder="Type-ahead" class="form-control input-sm"/>
+            <input type="text" id="associated_chassis" placeholder="Type-ahead" class="form-control input-sm" ng-model="selected4" typeahead="data for data in datas | filter:$viewValue | limitTo:2"/>
           </div>
           <div class="col-sm-6">
           </div>
@@ -215,7 +217,7 @@
         <div class="form-group">
           <label class="control-label col-sm-2 input_label" for="associated_apr">Associated APR</label>
           <div class="col-sm-4">
-            <input type="text" id="associated_apr" placeholder="Type-ahead" class="form-control input-sm"/>
+            <input type="text" id="associated_apr" placeholder="Type-ahead" class="form-control input-sm" ng-model="selected5" typeahead="data for data in datas | filter:$viewValue | limitTo:2"/>
           </div>
           <div class="col-sm-6">
           </div>
@@ -252,7 +254,7 @@
         <div class="form-group">
           <label class="control-label col-sm-2 input_label" for="trade_name">Trade Name*</label>
           <div class="col-sm-4">
-            <input type="text" id="trade_name" placeholder="Type-ahead" class="form-control input-sm"/>
+            <input type="text" id="trade_name" placeholder="Type-ahead" class="form-control input-sm" ng-model="selected6" typeahead="data for data in datas | filter:$viewValue | limitTo:2"/>
           </div>
           <div class="col-sm-6">
           </div>
@@ -274,7 +276,7 @@
         <div class="form-group">
           <label class="control-label col-sm-2 input_label" for="concentration_tested">Concentration Tested</label>
           <div class="col-sm-4">
-            <input type="text" class="form-control input-sm" id="concentration_tested" placeholder="Enter Concentration"/>
+            <input type="text" class="form-control input-sm" id="concentration_tested" placeholder="Enter Concentration" ng-model="selected7"  typeahead="data for data in datas | filter:$viewValue | limitTo:2"/>
           </div>
           <div class="col-sm-6">
           </div>

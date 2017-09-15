@@ -45,6 +45,7 @@ width:auto!important;
 button.attach:hover{
   background-color: #337ab7!important;
 }
+
 label{
 text-align:justify!important;
 margin-left: 15px!important;
@@ -56,6 +57,7 @@ span#basic-addon{
 
 #required_field{
 margin: 0px;
+float: left;
 }
 .specify{
 color: grey;
@@ -69,3 +71,8 @@ p{
 }
 p#formula_not_exist{
   margin-top: -14px!important;
+}
+
+.checkbox label{
+  margin-left:0px!important;
+}
