@@ -29,6 +29,15 @@ button:hover{
   background-color:#808080!important;
   color: white!important;
 }
+button:active{
+  background-color:#808080!important;
+  color: white!important;
+}
+button:focus{
+  background-color:#808080!important;
+  color: white!important;
+  border-color:#808080!important;
+}
 button{
 width:120px!important;
 
@@ -75,4 +84,11 @@ p#formula_not_exist{
 
 .checkbox label{
   margin-left:0px!important;
+}
+
+.checkboxdiv{
+  display: block!important;
+}
+.check{
+display: block!important;
 }
