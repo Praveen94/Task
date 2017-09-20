@@ -51,10 +51,6 @@
           $scope.modelCheck={
             fragranceType:""
           };
-
-$scope.check=function(){
-          console.log($scope);
-}
 });
 
     }());

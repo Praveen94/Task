@@ -37,8 +37,8 @@
     <form name="myform" class="form-horizontal">
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label" for="assessment_type">Assessment Type*</label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-2 input_label col-xs-12" for="assessment_type">Assessment Type*</label>
+        <div class="col-sm-4 col-xs-12">
           <select class="form-control input-sm" id="assessment_type">
             <option>Formulation Review</option>
           </select>
@@ -177,15 +177,11 @@
         <div class="col-sm-4">
           <p class="note">Select all that apply</p>
           <div class="checkbox" ng-repeat="check in checks">
-
             <label>
               <input type="checkbox" data-checklist-value="check.text" ng-model="check.isChecked" ng-change="addInput(check)"/>{{check.text}}
             </label>
           </div>
           <input type="text" class="form-control input-sm" ng-show="isTrue" ng-hide="!isTrue"/>
-
-
-
         </div>
         <br />
         <div class="col-sm-6">
@@ -264,8 +260,8 @@
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label">Fragrance*</label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-2 input_label col-xs-12">Fragrance*</label>
+        <div class="col-sm-4 col-xs-12">
           <div class="btn-group">
             <button type="button" ng-repeat="clickButton in clickButtons" class="btn btn-default" ng-click="modelCheck.fragranceType=clickButton.text">{{clickButton.text}}</button>
           </div>
