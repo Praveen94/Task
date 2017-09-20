@@ -69,14 +69,22 @@
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2 col-xs-3 input_label" for="human_testing">Human Testing</label>
-        <div class="col-sm-4 col-xs-6">
+        <label class="control-label col-sm-2 input_label" for="human_testing">Human Testing</label>
+        <div class="col-sm-6">
           <div class="btn-group">
-            <button type="button" class="btn btn-default">Controlled</button>
-            <button type="button" class="btn btn-default">Uncontrolled</button>
+            <button type="button" class="btn btn-default" ng-disabled="disable">Controlled</button>
+            <button type="button" class="btn btn-default" ng-disabled="disable">Uncontrolled</button>
           </div>
+          <span>
+            <div class="checkbox">
+
+              <label>
+                <input type="checkbox" ng-model="disable"/>Does not apply
+              </label>
+            </div>
+          </span>
         </div>
-        <div class="col-sm-6 col-xs-3">
+        <div class="col-sm-4">
         </div>
       </div>
 
@@ -259,20 +267,14 @@
         <label class="control-label col-sm-2 input_label">Fragrance*</label>
         <div class="col-sm-4">
           <div class="btn-group">
-            <!-- <button type="button" class="btn btn-default" ng-click="clickModified()">Modified</button>
-            <button type="button" class="btn btn-default" ng-click="clickNovel()">Novel</button>
-            <button type="button" class="btn btn-default" ng-click="clickExisting()">Existing</button> -->
-
-            <button type="button" ng-repeat="clickButton in clickButtons" class="btn btn-default" ng-model="clickButton.text" ng-class="">{{clickButton.text}}</button>
-
-
+            <button type="button" ng-repeat="clickButton in clickButtons" class="btn btn-default" ng-click="modelCheck.fragranceType=clickButton.text">{{clickButton.text}}</button>
           </div>
         </div>
         <div class="col-sm-6">
         </div>
       </div>
 
-      <div class="form-group" ng-show="modifiedisTrue">
+      <div class="form-group" ng-show="modelCheck.fragranceType=='Modified'">
         <label class="control-label col-sm-2 input_label" for="concentration_tested">Concentration Tested</label>
         <div class="col-sm-4">
           <input type="text" class="form-control input-sm" id="concentration_tested" placeholder="Enter Concentration" ng-model="selected7"  typeahead="data for data in datas | filter:$viewValue | limitTo:2"/>
@@ -281,7 +283,7 @@
         </div>
       </div>
 
-      <div class="form-group" ng-show="existingisTrue">
+      <div class="form-group" ng-show="modelCheck.fragranceType=='Existing'">
         <label class="control-label col-sm-2 input_label" for="rtr_number">RTR Number</label>
         <div class="col-sm-4">
           <input type="text" class="form-control input-sm" id="rtr_number" placeholder="Enter RTR No." ng-model="selected8"  typeahead="data for data in datas | filter:$viewValue | limitTo:2"/>
@@ -289,7 +291,6 @@
         <div class="col-sm-6">
         </div>
       </div>
-
 
       <div class="form-group">
         <label class="control-label col-sm-2 input_label">Safety Testing</label>

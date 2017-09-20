@@ -38,38 +38,23 @@
         }
       }
 
-      $scope.existingisTrue=false;
-      $scope.clickModified=function(){
-        $scope.existingisTrue=true;
-        $scope.modifiedisTrue=false;
-      }
-      $scope.modifiedisTrue=false;
-
-      $scope.clickExisting=function(){
-        $scope.modifiedisTrue=true;
-        $scope.existingisTrue=false;
-
-      }
-      $scope.clickNovel=function(){
-        $scope.modifiedisTrue=false;
-        $scope.existingisTrue=false;
-
-      }
-
       $scope.clickButtons=[
         {text:"Modified"},
         {text:"Novel"},
         {text:"Existing"}];
 
+        var fragrances=[
+          {name:"Modified"},
+          {name:"Novel"},
+          {name:"Existing"}];
 
-      });
+          $scope.modelCheck={
+            fragranceType:""
+          };
 
-
-
-
-
-
-
-
+$scope.check=function(){
+          console.log($scope);
+}
+});
 
     }());
