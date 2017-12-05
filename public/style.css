@@ -1,3 +1,6 @@
+.nowrap{white-space: nowrap;}
+
+
 .heading{
   font-family: sans-serif;
   font-size: 22px;
@@ -51,13 +54,23 @@ button.attach{
 margin-top: 5px;
 width:auto!important;
 }
+
 button.attach:hover{
   background-color: #337ab7!important;
 }
 
+button.attach:active{
+  background-color: #337ab7!important;
+}
+button.attach:focus{
+  background-color: #337ab7!important;
+  border-color: #337ab7!important;
+}
+
+
 label{
 text-align:justify!important;
-margin-left: 15px!important;
+
 }
 
 span#basic-addon{

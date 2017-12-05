@@ -15,166 +15,164 @@
 
 <body ng-controller="TypeAheadController">
 
-
   <div class="container-fluid">
 
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-6 col-md-6 col-lg-6">
         <h4 class="lead heading">Assessment Information</h4>
       </div>
-      <div class="col-sm-6">
+      <div class="col-sm-6 col-md-6 col-lg-6">
       </div>
     </div>
 
     <div class="row">
-      <div class="col-sm-offset-5 col-sm-2" >
+      <div class="col-sm-offset-5 col-sm-2 col-md-offset-5 col-md-2 col-lg-offset-5 col-lg-2" >
         <p id="required_field">*Required Field</p>
       </div>
-      <div class="col-sm-5">
+      <div class="col-sm-5 col-md-5 col-lg-5">
       </div>
     </div>
 
     <form name="myform" class="form-horizontal">
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label col-xs-12" for="assessment_type">Assessment Type*</label>
-        <div class="col-sm-4 col-xs-12">
+        <label class="control-label col-xs-12 col-sm-2 col-md-2 col-lg-2 input_label" for="assessment_type">Assessment Type*</label>
+        <div class=" col-xs-12 col-sm-4 col-md-4 col-lg-4">
           <select class="form-control input-sm" id="assessment_type">
             <option>Formulation Review</option>
           </select>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label" for="sub_type">Sub-Type*</label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label" for="sub_type">Sub-Type*</label>
+        <div class="col-sm-4 col-md-2 col-lg-2">
           <select class="form-control input-sm" id="sub_type">
             <option>Early Clinical Testing</option>
           </select>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
         </div>
       </div>
 
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
           <div class="form-group">
             <hr class="horizontal_line" />
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label" for="human_testing">Human Testing</label>
-        <div class="col-sm-6">
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label" for="human_testing">Human Testing</label>
+        <div class="col-sm-6 col-md-6 col-lg-6">
           <div class="btn-group">
-            <button type="button" class="btn btn-md btn-default" ng-disabled="disable">Controlled</button>
-            <button type="button" class="btn btn-md btn-default" ng-disabled="disable">Uncontrolled</button>
+            <button type="button" class="btn btn-default" ng-disabled="disable">Controlled</button>
+            <button type="button" class="btn btn-default" ng-disabled="disable">Uncontrolled</button>
           </div>
           <span>
             <div class="checkbox">
-
               <label>
                 <input type="checkbox" ng-model="disable"/>Does not apply
               </label>
             </div>
           </span>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 col-md-4 col-lg-4">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label" for="length_study">Length of Study</label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label" for="length_study">Length of Study</label>
+        <div class="col-sm-4 col-lg-4">
           <select class="form-control input-sm" id="length_study">
             <option selected="selected">Select</option>
           </select>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
         </div>
       </div>
 
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
           <div class="form-group">
             <hr class="horizontal_line" />
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label" for="formula_id">Formula ID Number</label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label" for="formula_id">Formula ID Number</label>
+        <div class="col-sm-4 col-md-4">
           <input type="text" class="form-control input-sm" ng-model="selected1" typeahead="data for data in datas | filter:$viewValue | limitTo:2"/><br/>
           <p class="note" id="formula_not_exist">If Formula ID does not exist please enter Lab notebook number.</p>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label" for="lab_notebook_no" >Lab Notebook Number*</label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label" for="lab_notebook_no" >Lab Notebook Number*</label>
+        <div class="col-sm-4 col-md-4 col-lg-4">
           <input type="text" class="form-control input-sm" id="lab_notebook_no" ng-model="selected2" typeahead="data for data in datas | filter:$viewValue | limitTo:2"/>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-sm-6 col-lg-6">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label" for="product_name">Product Name (GSS)</label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label" for="product_name">Product Name (GSS)</label>
+        <div class="col-sm-4 col-md-4 col-lg-4">
           <input type="text" class="form-control input-sm" id="product_name" placeholder="[ProductName]" ng-model="selected3" typeahead="data for data in datas | filter:$viewValue | limitTo:2"/>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label" for="pre_assessment">Pre-Assessment</label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label" for="pre_assessment">Pre-Assessment</label>
+        <div class="col-sm-4 col-md-4 col-lg-4">
           <div class="btn-group">
             <button type="button" class="btn btn-md btn-default">Yes</button>
             <button type="button" class="btn btn-md btn-default">No</button>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label" for="product_type">Product Type</label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label" for="product_type">Product Type</label>
+        <div class="col-sm-4 col-md-4 col-lg-4">
           <select class="form-control input-sm" id="product_type">
             <option>[Product Type]</option>
           </select>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label" for="end_user">End User*</label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label" for="end_user">End User*</label>
+        <div class="col-sm-4 col-md-4 col-lg-4">
           <select class="form-control input-sm" id="end_user">
             <option selected="selected">Adult</option>
           </select>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
         </div>
       </div>
 
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label" for="safety_related_claims">Safety Related Claims</label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label" for="safety_related_claims">Safety Related Claims</label>
+        <div class="col-sm-4 col-md-4 col-lg-4">
           <p class="note">Select all that apply</p>
           <div class="checkbox" ng-repeat="check in checks">
             <label>
@@ -184,54 +182,51 @@
           <input type="text" class="form-control input-sm" ng-show="isTrue" ng-hide="!isTrue"/>
         </div>
         <br />
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
         </div>
       </div>
 
 
-
-
-
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label">Similar Products</label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label">Similar Products</label>
+        <div class="col-sm-4 col-md-4 col-lg-4">
           <div class="btn-group">
-            <button type="button" class="btn btn-md btn-default">Yes</button>
-            <button type="button" class="btn btn-md btn-default">No</button>
+            <button type="button" class="btn btn-default">Yes</button>
+            <button type="button" class="btn btn-default">No</button>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label" for="associated_chassis">Associated Chassis</label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label" for="associated_chassis">Associated Chassis</label>
+        <div class="col-sm-4 col-md-4 col-lg-4">
           <input type="text" id="associated_chassis" placeholder="Type-ahead" class="form-control input-sm" ng-model="selected4" typeahead="data for data in datas | filter:$viewValue | limitTo:2"/>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label" for="associated_apr">Associated APR</label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label" for="associated_apr">Associated APR</label>
+        <div class="col-sm-4 col-md-4 col-lg-4">
           <input type="text" id="associated_apr" placeholder="Type-ahead" class="form-control input-sm" ng-model="selected5" typeahead="data for data in datas | filter:$viewValue | limitTo:2"/>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label" for="safety_reports">Safety Reports&nbsp;<p class="note">Attach HRIPT, CIT, PA, PT, HOT safety reports</p></label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label" for="safety_reports">Safety Reports&nbsp;<p class="note">Attach HRIPT, CIT, PA, PT, HOT safety reports</p></label>
+        <div class="col-sm-4 col-md-4 col-lg-4">
           <div class="input-group">
             <input type="text" class="form-control input-sm" placeholder="Filename Description">
             <span class="input-group-btn">
               <button class="btn btn-default btn-sm" type="button">Add File</button>
             </span>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-6 col-md-6 col-lg-6">
           </div>
         </div>
       </div>
@@ -239,111 +234,111 @@
 
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label">New INCI to JnJ?*</label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label">New INCI to JnJ?*</label>
+        <div class="col-sm-4 col-md-4 col-lg-4">
           <div class="btn-group">
-            <button type="button" class="btn btn-md btn-default">Yes</button>
-            <button type="button" class="btn btn-md btn-default">No</button>
+            <button type="button" class="btn btn-default">Yes</button>
+            <button type="button" class="btn btn-default">No</button>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label" for="trade_name">Trade Name*</label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label" for="trade_name">Trade Name*</label>
+        <div class="col-sm-4 col-md-4 col-lg-4">
           <input type="text" id="trade_name" placeholder="Type-ahead" class="form-control input-sm" ng-model="selected6" typeahead="data for data in datas | filter:$viewValue | limitTo:2"/>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label col-xs-12">Fragrance*</label>
-        <div class="col-sm-4 col-xs-12">
-          <div class="btn-group nowrap">
-            <button type="button" ng-repeat="clickButton in clickButtons" class="btn btn-md btn-default btn-responsive" ng-click="modelCheck.fragranceType=clickButton.text">{{clickButton.text}}</button>
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label">Fragrance*</label>
+        <div class="col-sm-4 col-md-4 col-lg-7">
+          <div class="btn-group">
+            <button type="button" ng-repeat="clickButton in clickButtons" class="btn btn-default" ng-click="modelCheck.fragranceType=clickButton.text">{{clickButton.text}}</button>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-3">
         </div>
       </div>
 
       <div class="form-group" ng-show="modelCheck.fragranceType=='Modified'">
-        <label class="control-label col-sm-2 input_label" for="concentration_tested">Concentration Tested</label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label" for="concentration_tested">Concentration Tested</label>
+        <div class="col-sm-4 col-md-4 col-lg-4">
           <input type="text" class="form-control input-sm" id="concentration_tested" placeholder="Enter Concentration" ng-model="selected7"  typeahead="data for data in datas | filter:$viewValue | limitTo:2"/>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
         </div>
       </div>
 
       <div class="form-group" ng-show="modelCheck.fragranceType=='Existing'">
-        <label class="control-label col-sm-2 input_label" for="rtr_number">RTR Number</label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label" for="rtr_number">RTR Number</label>
+        <div class="col-sm-4 col-md-4 col-lg-4">
           <input type="text" class="form-control input-sm" id="rtr_number" placeholder="Enter RTR No." ng-model="selected8"  typeahead="data for data in datas | filter:$viewValue | limitTo:2"/>
         </div>
-        <div class="col-sm-6">
-        </div>
-      </div>
-
-      <div class="form-group nowrap">
-        <label class="control-label col-sm-2 input_label">Safety Testing</label>
-        <div class="col-sm-4">
-          <div class="btn-group">
-            <button type="button" class="btn btn-md btn-default">Yes</button>
-            <button type="button" class="btn btn-md btn-default">No</button>
-          </div>
-          <button class="btn btn-md btn-default" id="add_signature">Add Signature</button>
-        </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label" for="approver">Approver</label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label">Safety Testing</label>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+          <div class="btn-group">
+            <button type="button" class="btn btn-default">Yes</button>
+            <button type="button" class="btn btn-default">No</button>
+          </div>
+          <button class="btn btn-default" id="add_signature">Add Signature</button>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label" for="approver">Approver</label>
+        <div class="col-sm-4 col-md-4 col-lg-4">
           <div class="input-group">
             <input type="text" class="form-control input-sm" aria-describedby="basic-addon2">
             <span class="input-group-addon" id="basic-addon2"><span class="small glyphicon glyphicon-user"></span></span>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2 input_label" for="attachments">Attachments</label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-2 col-md-2 col-lg-2 input_label" for="attachments">Attachments</label>
+        <div class="col-sm-4 col-md-4 col-lg-4">
           <div class="input-group">
             <input type="text" class="form-control input-sm" id="attachments" placeholder="Filename Description">
             <span class="input-group-btn">
               <button class="btn btn-default btn-sm" type="button">Add File</button>
             </span>
           </div>
-          <p class="small"><button class="attach btn-md btn-primary" type="button"><span class="glyphicon glyphicon-plus"></span></button>  Attach Another File</p>
+          <p class="small"><button class="attach btn-primary" type="button"><span class="glyphicon glyphicon-plus"></span></button>  Attach Another File</p>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
         </div>
       </div>
 
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
           <div class="form-group">
             <hr class="horizontal_line" />
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-md-6 col-lg-6">
         </div>
       </div>
 
 
       <div class="row">
-        <div class="col-sm-3">
-          <p class="small" id="attach_formula"><button class="attach btn-primary btn-md" type="button"><span class="glyphicon glyphicon-plus"></span></button>  Attach another formula</p>
+        <div class="col-sm-3 col-md-3 col-lg-3">
+          <p class="small" id="attach_formula"><button class="attach btn-primary" type="button"><span class="glyphicon glyphicon-plus"></span></button>  Attach another formula</p>
         </div>
-        <div class="col-sm-9">
+        <div class="col-sm-9 col-md-9 col-lg-9">
         </div>
       </div>
 
